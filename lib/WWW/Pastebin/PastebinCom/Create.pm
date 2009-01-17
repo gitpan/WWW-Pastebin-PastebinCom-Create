@@ -3,7 +3,7 @@ package WWW::Pastebin::PastebinCom::Create;
 use warnings;
 use strict;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 use Carp;
 use URI;
@@ -56,7 +56,7 @@ sub paste {
         poster  => '',
         email   => '',
         paste   => 'Send',
-
+        uri     => 'http://pastebin.com/',
         %args,
     );
 
@@ -75,7 +75,7 @@ sub paste {
             and $args{expiry} ne 'f';
 
     $args{code2} = delete $args{text};
-    my $uri = URI->new('http://pastebin.com/');
+    my $uri = URI->new( delete $args{uri} );
 
     my $response = $self->{ua}->post( $uri, \%args );
 
@@ -262,6 +262,7 @@ set to as well as C<agent> argument is set to mimic Firefox.
         format => 'perl',
         poster => 'Zoffix',
         expiry => 'm',
+        uri    => 'http://private_subdomain.pastebin.com/',
     ) or die "Failed to paste: " . $paste->error;
 
 Instructs the object to pastebin some text. If pasting succeeded returns
@@ -327,6 +328,13 @@ When C<expiry> is set to value C<f>, the paste will (should) stick around
 "forever".
 
 =back
+
+=head3 C<uri>
+
+    uri => 'http://private_domain.pastebin.com/'
+
+B<Optional>. Allows one to paste into a so called "private" pastebin with a personal domain name. Takes a URI to the private paste, i.e. C<http://private_domain.pastebin.com/>.
+B<Defaults to:> C<http://pastebin.com/> (paste to normal pastebin)
 
 =head2 error
 

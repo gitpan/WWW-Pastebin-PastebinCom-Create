@@ -1,6 +1,6 @@
 ---
 name: WWW-Pastebin-PastebinCom-Create
-version: 0.001
+version: 0.002
 author:
   - 'Zoffix Znet <zoffix@cpan.org>'
 abstract: paste to L<http://pastebin.com> from Perl.
@@ -17,7 +17,7 @@ build_requires:
 provides:
   WWW::Pastebin::PastebinCom::Create:
     file: lib/WWW/Pastebin/PastebinCom/Create.pm
-    version: 0.001
+    version: 0.002
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

@@ -1,5 +1,8 @@
 WWW-Pastebin-PastebinCom-Create
 
+The module provides means of pasting large texts into
+L<http://pastebin.com> pastebin site.
+
 INSTALLATION
 
 To install this module, run the following commands:
