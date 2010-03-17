@@ -1,24 +1,26 @@
 ---
 name: WWW-Pastebin-PastebinCom-Create
-version: 0.002
+version: 0.003
 author:
   - 'Zoffix Znet <zoffix@cpan.org>'
 abstract: paste to L<http://pastebin.com> from Perl.
 license: perl
 resources:
   license: http://dev.perl.org/licenses/
+build_requires:
+  Test::More: 0
 requires:
   Carp: 1.04
   LWP::UserAgent: 2.036
   URI: 1.35
   overload: 1.04
-build_requires:
-  Test::More: 0
+configure_requires:
+  Module::Build: 0.35
 provides:
   WWW::Pastebin::PastebinCom::Create:
     file: lib/WWW/Pastebin/PastebinCom/Create.pm
-    version: 0.002
-generated_by: Module::Build version 0.2808
+    version: 0.003
+generated_by: Module::Build version 0.35
 meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4

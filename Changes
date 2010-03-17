@@ -1,5 +1,8 @@
 Revision history for WWW-Pastebin-PastebinCom-Create
 
+0.003   Jan 17, 2009
+        Applied Diab Jerius's patch to adopt the module for the new pastebin.com format
+
 0.002   Jan 17, 2009
         Added a "uri" argument to support pasting to "private" pastebins.
 
