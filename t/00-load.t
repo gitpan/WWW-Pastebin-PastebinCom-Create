@@ -13,7 +13,7 @@ BEGIN {
     use_ok( 'WWW::Pastebin::PastebinCom::Create' );
 }
 
-diag( "Testing WWW::Pastebin::PastebinCom::Paste $WWW::Pastebin::PastebinCom::Paste::VERSION, Perl $], $^X" );
+diag( "Testing WWW::Pastebin::PastebinCom::Create $WWW::Pastebin::PastebinCom::Create::VERSION, Perl $], $^X" );
 
 use WWW::Pastebin::PastebinCom::Create;
 

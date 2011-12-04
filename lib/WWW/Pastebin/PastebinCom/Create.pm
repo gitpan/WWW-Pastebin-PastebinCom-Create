@@ -3,7 +3,7 @@ package WWW::Pastebin::PastebinCom::Create;
 use warnings;
 use strict;
 
-our $VERSION = '0.003';
+our $VERSION = '0.004';
 
 use Carp;
 use URI;
