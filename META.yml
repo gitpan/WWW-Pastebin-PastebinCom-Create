@@ -1,13 +1,14 @@
 ---
-abstract: 'paste to L<http://pastebin.com> from Perl.'
+abstract: 'paste on www.pastebin.com without API keys'
 author:
   - 'Zoffix Znet <zoffix@cpan.org>'
 build_requires:
   Test::More: 0
 configure_requires:
-  Module::Build: 0.36
-generated_by: 'Module::Build version 0.3607'
-license: perl
+  Module::Build: 0
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4202, CPAN::Meta::Converter version 2.132830'
+license: artistic_2
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
@@ -15,12 +16,12 @@ name: WWW-Pastebin-PastebinCom-Create
 provides:
   WWW::Pastebin::PastebinCom::Create:
     file: lib/WWW/Pastebin/PastebinCom/Create.pm
-    version: 0.004
+    version: 1.001
 requires:
-  Carp: 1.04
-  LWP::UserAgent: 2.036
-  URI: 1.35
-  overload: 1.04
+  Moo: 1.004001
+  WWW::Mechanize: 1.73
+  overload: 0
+  perl: 5.006
 resources:
-  license: http://dev.perl.org/licenses/
-version: 0.004
+  license: http://www.perlfoundation.org/artistic_license_2_0
+version: 1.001

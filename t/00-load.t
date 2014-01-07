@@ -1,22 +1,19 @@
-#!/usr/bin/env perl
-
+#!perl -T
+use 5.006;
 use strict;
-use warnings;
-
-use Test::More tests => 7;
+use warnings FATAL => 'all';
+use Test::More tests => 6;
 
 BEGIN {
-    use_ok('Carp');
-    use_ok('URI');
-    use_ok('LWP::UserAgent');
+    use_ok('Moo');
+    use_ok('WWW::Mechanize');
     use_ok('overload');
-    use_ok( 'WWW::Pastebin::PastebinCom::Create' );
+    use_ok( 'WWW::Pastebin::PastebinCom::Create' ) || print "Bail out!\n";
 }
 
 diag( "Testing WWW::Pastebin::PastebinCom::Create $WWW::Pastebin::PastebinCom::Create::VERSION, Perl $], $^X" );
 
-use WWW::Pastebin::PastebinCom::Create;
+my $bin = WWW::Pastebin::PastebinCom::Create->new;
 
-my $p = WWW::Pastebin::PastebinCom::Create->new;
-isa_ok( $p, 'WWW::Pastebin::PastebinCom::Create' );
-can_ok( $p, qw(new paste paste_uri error get_valid_formats) );
+isa_ok($bin, 'WWW::Pastebin::PastebinCom::Create');
+can_ok($bin, qw/paste  paste_uri  new  error/);
