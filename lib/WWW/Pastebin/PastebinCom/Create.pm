@@ -2,7 +2,7 @@ package WWW::Pastebin::PastebinCom::Create;
 
 use Moo;
 use WWW::Mechanize;
-our $VERSION = '1.001';
+our $VERSION = '1.002';
 
 use overload q{""} => sub { return shift->paste_uri };
 
@@ -52,6 +52,11 @@ sub paste {
     my $uri = '' . $mech->uri;
     $uri =~ m{/index\.php}
         and return $self->_set_error(q{Didn't get a valid paste URI});
+
+    $uri =~ m{/warning\.php}
+        and return $self->_set_error(q{Reached the paste limit. See } .
+            $uri . q{ for details.}
+        );
 
     return $self->paste_uri( $uri );
 }
@@ -277,9 +282,10 @@ B<IMPORANT. Please read.>
 You kinda, sorta, maybe shouldn't really use this module. Use
 L<WWW::Pastebin::PastebinCom::API> instead. Pastebin.com switched to a
 key-based API (which is what C<::API> version implements),
-and using this, keyless, module for frequent pastes
-might trigger a captcha, or maybe the captcha will be triggered
-randomly (I've no idea what they're doing).
+and using this, keyless, module lets you paste only 10 pastes per day.
+
+The limit is higher with the L<WWW::Pastebin::PastebinCom::API>
+module, so check it out.
 
 This module primarily exists for use with L<App::Nopaste>.
 

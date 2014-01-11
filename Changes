@@ -1,5 +1,9 @@
 Revision history for WWW-Pastebin-PastebinCom-Create
 
+1.001   2014-01-11
+        - Fixed the module and the tests to handle properly the case
+          when we reach the daily 10-pastes limit.
+
 1.001   2014-01-07
         - Resurrected the module for use with App::Nopaste
 

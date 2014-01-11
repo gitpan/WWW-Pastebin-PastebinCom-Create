@@ -8,9 +8,10 @@ WARNING!!!
     You kinda, sorta, maybe shouldn't really use this module. Use
     WWW::Pastebin::PastebinCom::API instead. Pastebin.com switched to a
     key-based API (which is what "::API" version implements), and using
-    this, keyless, module for frequent pastes might trigger a captcha, or
-    maybe the captcha will be triggered randomly (I've no idea what they're
-    doing).
+    this, keyless, module lets you paste only 10 pastes per day.
+
+    The limit is higher with the WWW::Pastebin::PastebinCom::API module, so
+    check it out.
 
     This module primarily exists for use with App::Nopaste.
 

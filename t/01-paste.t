@@ -32,6 +32,9 @@ SKIP: {
         if ( $bin->error =~ /^Network/ ) {
             skip 'Got a network error; skipping', 5;
         }
+        elsif ( $bin->error =~ /^Reached the paste limit/ ) {
+            skip 'Reached the paste limit; skipping', 5;
+        }
     }
 
     is(
