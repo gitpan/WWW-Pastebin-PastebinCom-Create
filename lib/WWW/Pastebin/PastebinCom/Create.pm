@@ -2,7 +2,7 @@ package WWW::Pastebin::PastebinCom::Create;
 
 use Moo;
 use WWW::Mechanize;
-our $VERSION = '1.002';
+our $VERSION = '1.003';
 
 use overload q{""} => sub { return shift->paste_uri };
 
@@ -90,7 +90,7 @@ sub __process_args {
 sub _set_mech_error {
     my ( $self, $mech ) = @_;
     $self->error(
-        'Network error: ' . $mech->status . ' ' . $mech->res->status_line
+        'Network error: ' . $mech->res->code . ' ' . $mech->res->status_line
     );
     return;
 }

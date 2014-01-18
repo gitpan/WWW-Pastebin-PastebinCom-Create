@@ -1,6 +1,9 @@
 Revision history for WWW-Pastebin-PastebinCom-Create
 
-1.001   2014-01-11
+1.003   2014-01-17
+        - Fixed a bug where the module died when a network error occured
+
+1.002   2014-01-11
         - Fixed the module and the tests to handle properly the case
           when we reach the daily 10-pastes limit.
 
